@@ -17,19 +17,45 @@ import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
-function ExampleCard() {
+function SoundboardCard() {
+  const playSound = useCallback((soundUrl: string) => {
+    const audio = new Audio(soundUrl);
+    audio.play();
+  }, []);
+
   return (
     <Card className="border-neutral-200 bg-white">
       <CardHeader>
-        <CardTitle className="text-neutral-900">Welcome to the Frame Template</CardTitle>
+        <CardTitle className="text-neutral-900">Air Horn Party 🎉</CardTitle>
         <CardDescription className="text-neutral-600">
-          This is an example card that you can customize or remove
+          Tap to play different air horn sounds
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-neutral-800">
-        <p>
-          Your frame content goes here. The text is intentionally dark to ensure good readability.
-        </p>
+      <CardContent className="grid gap-2">
+        <PurpleButton 
+          onClick={() => playSound('/sounds/airhorn1.mp3')}
+          className="w-full"
+        >
+          🎺 Classic Air Horn
+        </PurpleButton>
+        <PurpleButton 
+          onClick={() => playSound('/sounds/airhorn2.mp3')}
+          className="w-full"
+        >
+          🚢 Ship Horn
+        </PurpleButton>
+        <PurpleButton 
+          onClick={() => playSound('/sounds/airhorn3.mp3')}
+          className="w-full"
+        >
+          🚨 Emergency Siren
+        </PurpleButton>
+        <PurpleButton 
+          onClick={() => playSound('/sounds/airhorn4.mp3')}
+          className="w-full"
+        >
+          🎉 Party Blower
+        </PurpleButton>
       </CardContent>
     </Card>
   );
@@ -137,7 +163,7 @@ export default function Frame(
     >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4 text-neutral-900">{title}</h1>
-        <ExampleCard />
+        <SoundboardCard />
       </div>
     </div>
   );

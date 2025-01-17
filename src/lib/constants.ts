@@ -1,3 +1,3 @@
-export const PROJECT_ID = 'farcaster-frames-template';
-export const PROJECT_TITLE = "Farcaster Frames Template";
-export const PROJECT_DESCRIPTION = "A Farcaster Frames v2 Template by hellno";
+export const PROJECT_ID = 'airhornwave';
+export const PROJECT_TITLE = "AirHornWave";
+export const PROJECT_DESCRIPTION = "Air horn soundboard by horsefacts.eth";
